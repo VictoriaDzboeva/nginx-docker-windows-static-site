@@ -1,1 +1,27 @@
-# nginx-docker-windows-static-site
+# Отчет по практической работе: Nginx в Docker на Windows
+
+**Выполнила:** Дзбоева В.Ю.
+
+## Цель работы
+Развернуть статический сайт (виниловый магазин) на веб-сервере Nginx внутри Docker-контейнера на операционной системе Windows.
+
+## Ход выполнения работы
+
+1. **Установка Docker.** Была установлена подсистема WSL 2 и Docker Desktop для Windows. Проверена работоспособность командой `docker version`.
+2. **Подготовка проекта.** Создана папка `nginx-static`, внутри неё — папка `site` с файлами сайта (HTML, CSS, JS, картинки).
+3. **Создание конфигурационных файлов.**
+   * Создан `nginx.conf` для настройки сервера (отключение кэширования).
+   * Создан `docker-compose.yml` для описания контейнера (образ `nginx:alpine`, проброс порта `8080:80`, монтирование папки `site` и файла `nginx.conf`).
+4. **Запуск контейнера.** В командной строке выполнена команда `docker compose up -d`.
+5. **Проверка.** Сайт успешно открывается в браузере по адресу `http://localhost:8080`.
+
+## Результаты и скриншоты
+
+### 1. Запуск контейнера и проверка статуса
+<img width="974" height="373" alt="image" src="https://github.com/user-attachments/assets/3b19f350-4395-46c9-9694-934d765a407e" />
+
+### 2. Работающий сайт в браузере
+<img width="2782" height="1630" alt="image" src="https://github.com/user-attachments/assets/e0709d19-d803-4e4a-b5f1-52338b26dc24" />
+
+## Ссылка на видео
+https://drive.google.com/drive/folders/1nA-MJJeC_oHBa92TOQE83cWpKUQG1u8p?usp=sharing
